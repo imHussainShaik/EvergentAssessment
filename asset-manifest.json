@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/EvergentAssessment/static/css/main.a007499f.css",
+    "main.js": "/EvergentAssessment/static/js/main.622d7774.js",
+    "static/media/img.jpg": "/EvergentAssessment/static/media/img.6d8f8ca7932e81670337.jpg",
+    "static/media/LobsterTwo-BoldItalic.ttf": "/EvergentAssessment/static/media/LobsterTwo-BoldItalic.629da104aaec558aead0.ttf",
+    "index.html": "/EvergentAssessment/index.html",
+    "main.a007499f.css.map": "/EvergentAssessment/static/css/main.a007499f.css.map",
+    "main.622d7774.js.map": "/EvergentAssessment/static/js/main.622d7774.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a007499f.css",
+    "static/js/main.622d7774.js"
+  ]
+}
