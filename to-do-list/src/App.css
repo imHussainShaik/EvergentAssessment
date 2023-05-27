@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'LobsterTwo-BoldItalic';
+  src: url('./fonts/LobsterTwo-BoldItalic.ttf') format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Verdana,'Segoe UI', Tahoma, Geneva, sans-serif;
+  background-image: url('./img.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.filters{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+.form{
+  display: flex;
+  justify-content: space-around ;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-family: 'LobsterTwo-BoldItalic';
+  font-size: 150px;
+  color: #f44336;
+  margin: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #679267;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #3f8f3f;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+input[type='text'] {
+  flex: 1;
+  padding: 9px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  gap: 10px;  
+  background-color: #fff;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li:hover {
+  transform: translateY(-5px);
+}
+
+
+
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.delete:hover {
+  background-color: #8d4e4e;
 }
