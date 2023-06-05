@@ -3,57 +3,76 @@ import './App.css';
 
 import React, { useState, useEffect } from 'react';
 
-function App() {
-  const [tasks, setTasks] = useState(() => {
+function App() 
+
+{
+
+  const [tasks, setTasks] = useState(() => 
+  {
     const storedTasks = localStorage.getItem('tasks');
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
+
   const [newTask, setNewTask] = useState('');
   const [filter, setFilter] = useState('all');
 
-  useEffect(() => {
+  useEffect(() => 
+  {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
-  const handleNewTaskChange = (event) => {
+  const handleNewTaskChange = (event) => 
+  {
     setNewTask(event.target.value);
   };
 
-  const handleNewTaskSubmit = (event) => {
+  const handleNewTaskSubmit = (event) => 
+  {
     event.preventDefault();
-    if (newTask.trim() !== '') {
+
+    if (newTask.trim() !== '') 
+    {
       setTasks([...tasks, { id: Date.now(), text: newTask, completed: false }]);
       setNewTask('');
     }
   };
 
-  const handleTaskDelete = (taskId) => {
+  const handleTaskDelete = (taskId) => 
+  {
     setTasks(tasks.filter((task) => task.id !== taskId));
   };
 
-  const handleTaskComplete = (taskId) => {
+  const handleTaskComplete = (taskId) => 
+  {
     setTasks(
       tasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    );
+        task.id === taskId ? { ...task, completed: !task.completed } : task ) );
   };
 
-  const filteredTasks = tasks.filter((task) => {
-    if (filter === 'completed') {
+  const filteredTasks = tasks.filter((task) => 
+  {
+    if (filter === 'completed') 
+    {
       return task.completed;
-    } else if (filter === 'incomplete') {
+    } 
+    
+    else if (filter === 'incomplete') 
+    {
       return !task.completed;
-    } else {
+    } 
+    
+    else 
+    {
       return true;
     }
   });
 
-  return (
-    <div className='list'>
-    <h1>To-Do List</h1>
+  return(
 
+    <div className='list'>
+      <h1>To-Do List</h1>
     <div>
+
       <form className='form' onSubmit={handleNewTaskSubmit}>
         <input
           type="text"
@@ -61,6 +80,7 @@ function App() {
           value={newTask}
           onChange={handleNewTaskChange}
         />
+        
         <button type="submit">+ Add New Task</button>
       </form>
 
@@ -69,9 +89,13 @@ function App() {
         <button onClick={() => setFilter('completed')}>Completed</button>
         <button onClick={() => setFilter('incomplete')}>Incomplete</button>
       </div>
+
       <ul>
-        {filteredTasks.map((task) => (
+
+        {filteredTasks.map((task) => 
+          (
           <li key={task.id}>
+
             <input
               type="checkbox"
               checked={task.completed}
@@ -80,11 +104,15 @@ function App() {
             <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
               {task.text}
             </span>
-            <button className='delete' onClick={() => handleTaskDelete(task.id)}>Delete</button>
+
+            <button className='delete' onClick={() => handleTaskDelete(task.id)}>
+              Delete
+            </button>
+
           </li>
-        ))}
+          ))}
       </ul>
-    </div>
+    </div>  
     </div>
   );
 }
